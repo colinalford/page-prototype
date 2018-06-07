@@ -1,0 +1,27 @@
+
+<cc-layout>
+  <cc-action-bar></cc-action-bar>
+  <cc-aside>
+    <cc-filters [group]="filters">
+      <label for="one">First</label>
+      <input id="one"
+        type="text"
+        [formControl]="filters.controls.first">
+
+      <label for="two">Second</label>
+      <input id="two"
+        type="text"
+        [formControl]="filters.controls.second">
+
+      <label for="three">Third</label>
+      <input id="three"
+        type="text"
+        [formControl]="filters.controls.third">
+    </cc-filters>
+    <cc-resources></cc-resources>
+  </cc-aside>
+  <cc-main>
+    <cc-filter-drawer></cc-filter-drawer>
+    {{ data | async | json }}
+  </cc-main>
+</cc-layout>
